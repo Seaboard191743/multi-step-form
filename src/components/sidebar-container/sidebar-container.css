@@ -1,0 +1,7 @@
+.sidebar {
+  width: 274px;
+  height: 568px;
+  background: no-repeat center/cover url('../../assets/sidebar-bg.svg') grey;
+  overflow: hidden;
+  border-radius: 10px;
+}

@@ -1,0 +1,9 @@
+.grid-container {
+  width: 910px;
+  display: grid;
+  grid-template-columns: 274px 536px;
+  column-gap: 100px;
+}
+.grid-container:not(:first-child) {
+  margin-left: 1.5rem;
+}

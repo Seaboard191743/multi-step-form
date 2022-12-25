@@ -1,0 +1,34 @@
+.btn-container {
+  display: flex;
+  margin-top: auto;
+}
+
+.btn {
+  width: 12.3rem;
+  height: 4.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: margin 0.3s;
+}
+
+.btn--step {
+  background-color: #022959;
+  margin-left: auto;
+}
+.btn--step:hover {
+  margin-right: 5px;
+}
+.btn--prevstep {
+  color: #9699aa;
+}
+.btn--prevstep:hover {
+  margin-left: 5px;
+}
+.btn--confirm {
+  background-color: #483eff;
+}
