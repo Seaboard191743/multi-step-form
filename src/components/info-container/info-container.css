@@ -1,7 +1,8 @@
 .info-container {
   width: 536px;
   height: 100%;
-  padding: 40px 0;
+  padding: 4rem 0;
+  padding-right: 9rem;
   display: flex;
   flex-direction: column;
   color: #022959;

@@ -1,0 +1,42 @@
+.plan-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plan {
+  width: 138px;
+  height: 160px;
+  padding: 2rem 1.6rem;
+  border: 1px solid #d6d9e6;
+  border-radius: 0.8rem;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.plan--active {
+  background-color: #f8f9ff;
+  border-color: #483eff;
+}
+
+.plan-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 3.9rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.plan-icon > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.plan-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 7px;
+  color: #022959;
+}
+
+.plan-price {
+  font-size: 1.4rem;
+  color: #9699aa;
+}

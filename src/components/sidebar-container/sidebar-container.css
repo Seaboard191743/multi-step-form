@@ -4,4 +4,5 @@
   background: no-repeat center/cover url('../../assets/sidebar-bg.svg') grey;
   overflow: hidden;
   border-radius: 10px;
+  padding: 4rem 3.2rem;
 }

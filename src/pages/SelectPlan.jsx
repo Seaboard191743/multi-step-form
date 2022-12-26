@@ -7,6 +7,8 @@ import { SideBarContainer } from '../components/sidebar-container/SideBarContain
 import { InfoContainer } from '../components/info-container/InfoContainer';
 import { Heading } from '../components/heading/Heading';
 
+import { PlanList } from '../components/plan/PlanList';
+
 import { ButtonContainer } from '../components/button-container/ButtonContainer';
 import { Button } from '../components/button/Button';
 
@@ -22,6 +24,7 @@ export const SelectPlan = () => {
           heading='Select you plan'
           subheading='You have the option of monthly or yearly billing.'
         />
+        <PlanList />
         <ButtonContainer>
           <Button
             changeSlide={() => handleChangeSlide('prev', dispatch)}

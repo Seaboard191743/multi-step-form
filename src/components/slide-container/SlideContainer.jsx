@@ -11,10 +11,7 @@ export const SlideContainer = ({ children }) => {
       <div
         className='slides'
         style={{
-          transform:
-            slide > 0
-              ? `translateX(calc(-${slide * 100}% - ${slide * 15}px))`
-              : null,
+          transform: `translateX(calc(-${slide * 100}% - ${slide * 15}px))`,
         }}
       >
         {children}

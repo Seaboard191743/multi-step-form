@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { handleChangeSlide } from '../utils/handlechangeSlide';
 
@@ -7,6 +7,7 @@ import { SideBarContainer } from '../components/sidebar-container/SideBarContain
 import { InfoContainer } from '../components/info-container/InfoContainer';
 import { Heading } from '../components/heading/Heading';
 import { Input } from '../components/input/Input';
+
 import { ButtonContainer } from '../components/button-container/ButtonContainer';
 
 import { Button } from '../components/button/Button';
@@ -18,10 +19,6 @@ export const PersonalInfo = () => {
     phone: '',
   });
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    console.log(inputValue);
-  }, [inputValue]);
 
   const handleInputValueChange = (e) => {
     const { name, value } = e.target;
@@ -72,9 +69,9 @@ export const PersonalInfo = () => {
           <Button
             changeSlide={() => {
               const { name, email, phone } = inputValue;
-              return name && email && phone
-                ? handleChangeSlide('next', dispatch)
-                : alert('Fill in all the inputs');
+              // return name && email && phone
+              handleChangeSlide('next', dispatch);
+              // : alert('Fill in all the inputs');
             }}
             className='btn btn--step'
           >
