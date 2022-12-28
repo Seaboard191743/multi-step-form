@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { handleChangeSlide } from '../utils/handlechangeSlide';
+import { setPersonalInfo } from '../slices/formSlice';
 
 import { GridContainer } from '../components/grid-container/GridContainer';
 import { SideBarContainer } from '../components/sidebar-container/SideBarContainer';
@@ -69,9 +70,12 @@ export const PersonalInfo = () => {
           <Button
             changeSlide={() => {
               const { name, email, phone } = inputValue;
-              // return name && email && phone
+              // if (name && email && phone) {
+              dispatch(setPersonalInfo(inputValue));
               handleChangeSlide('next', dispatch);
-              // : alert('Fill in all the inputs');
+              // return;
+              // }
+              // alert('Fill in the form');
             }}
             className='btn btn--step'
           >
