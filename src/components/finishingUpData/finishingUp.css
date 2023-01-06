@@ -1,0 +1,53 @@
+.finishing-up-container {
+  padding: 1.6rem 2.4rem;
+  background-color: #f8f9ff;
+  border-radius: 8px;
+}
+.finishing-up-addOn,
+.finishing-up-plan,
+.finishing-up-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.finishing-up-addOn {
+  margin-bottom: 1.6rem;
+}
+.finishing-up-plan {
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid rgba(150, 153, 170, 0.2);
+  margin-bottom: 1.6rem;
+}
+.finishing-up-addOn {
+  margin-bottom: 1.6rem;
+}
+.finishing-up-total {
+  padding: 2.4rem;
+}
+.finishing-up-plan-title {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+}
+.finishing-up-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.finishing-up-plan-change,
+.finishing-up-addOn-title,
+.finishing-up-total-title {
+  font-size: 1.4rem;
+  color: #9699aa;
+}
+.finishing-up-plan-change {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.finishing-up-addOn-price {
+  font-size: 1.4rem;
+}
+.finishing-up-total-cost {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #483eff;
+}

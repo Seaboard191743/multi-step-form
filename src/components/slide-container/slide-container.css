@@ -4,8 +4,19 @@
   padding: 15px;
   overflow: hidden;
   background-color: #fff;
+  border-radius: 1.5rem;
 }
 .slides {
   display: flex;
   transition: transform 0.7s ease-in-out 0.3s;
+}
+
+@media (max-width: 1050px) {
+  .slide-container {
+    width: 375px;
+    height: 750px;
+    padding: 0;
+    background-color: #fff;
+    border-radius: 0;
+  }
 }

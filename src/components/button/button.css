@@ -6,6 +6,7 @@
 .btn {
   width: 12.3rem;
   height: 4.8rem;
+  font-family: 'Ubuntu', sans-serif;
   border: none;
   border-radius: 8px;
   font-size: 1.6rem;
@@ -13,7 +14,7 @@
   background-color: transparent;
   color: #fff;
   cursor: pointer;
-  transition: margin 0.3s;
+  transition: margin 0.3s, color 0.3s, background-color 0.3s;
 }
 
 .btn--step {
@@ -22,13 +23,20 @@
 }
 .btn--step:hover {
   margin-right: 5px;
+  background-color: #164a8a;
 }
 .btn--prevstep {
   color: #9699aa;
+  width: initial;
+  height: initial;
 }
 .btn--prevstep:hover {
   margin-left: 5px;
+  color: #022959;
 }
 .btn--confirm {
   background-color: #483eff;
+}
+.btn--confirm:hover {
+  background-color: #928cff;
 }

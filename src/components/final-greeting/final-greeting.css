@@ -1,0 +1,19 @@
+.final-greeting {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.final-greeting-title {
+  font-size: 3.2rem;
+  margin: 3.2rem 0 1.4rem;
+}
+
+.final-greeting-description {
+  text-align: center;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+  color: #9699aa;
+}

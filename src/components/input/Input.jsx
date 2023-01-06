@@ -10,11 +10,18 @@ export const Input = ({
   required,
   placeholder,
   label,
+  warningLabel,
 }) => {
   return (
     <div className='input-group'>
       <div className='label-group'>
-        <label htmlFor={id}>{label}</label>
+        {warningLabel ? (
+          <>
+            <label htmlFor={id}>{label}</label> <span>{warningLabel}</span>
+          </>
+        ) : (
+          <label htmlFor={id}>{label}</label>
+        )}
       </div>
       <input
         type={type}
@@ -24,6 +31,7 @@ export const Input = ({
         required={required}
         value={value[name]}
         onChange={changeInputValue}
+        style={{ borderColor: warningLabel ? '#EE374A' : '#d6d9e6' }}
       />
     </div>
   );

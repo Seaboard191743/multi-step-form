@@ -7,12 +7,15 @@ import {
   setSelectedPlan,
   setSelectedPlanPeriod,
   setDefaultPlanPrice,
+  selectedPlan,
 } from '../../slices/formSlice';
 
 import './plan.css';
 
 export const PlanList = () => {
   const dispatch = useDispatch();
+
+  const { types, isMonthlyPlan } = useSelector(selectedPlan);
 
   const handleSelectedPlan = (type) => {
     dispatch(setSelectedPlan({ type }));
@@ -21,12 +24,28 @@ export const PlanList = () => {
   const handleSlideToggle = () => {
     dispatch(setSelectedPlanPeriod());
     dispatch(setDefaultPlanPrice());
-    dispatch(setSelectedPlan({ type: 'arcade' }));
+    dispatch(setSelectedPlan({ type: 'Arcade' }));
   };
 
   return (
     <div className='plan-container'>
-      <Plan
+      {types.map((plan) => {
+        const { id, type, isActive } = plan;
+        const price = isMonthlyPlan
+          ? `$${plan.price.month}/mo`
+          : `$${plan.price.year}/yr`;
+
+        return (
+          <Plan
+            key={id}
+            type={type}
+            price={price}
+            isActive={isActive}
+            handleSelectedPlan={handleSelectedPlan}
+          />
+        );
+      })}
+      {/* <Plan
         planTitle='Arcade'
         imgSrc='./images/arcade.svg'
         type='arcade'
@@ -43,7 +62,7 @@ export const PlanList = () => {
         imgSrc='./images/pro.svg'
         type='pro'
         handleSelectedPlan={handleSelectedPlan}
-      />
+      /> */}
       <SelectedPlanPeriod handleSlideToggle={handleSlideToggle} />
     </div>
   );

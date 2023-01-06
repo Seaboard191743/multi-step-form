@@ -1,18 +1,24 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { GridContainer } from '../components/grid-container/GridContainer';
 import { SideBarContainer } from '../components/sidebar-container/SideBarContainer';
 import { InfoContainer } from '../components/info-container/InfoContainer';
 import { Heading } from '../components/heading/Heading';
 import { ButtonContainer } from '../components/button-container/ButtonContainer';
+import { FinishingUpData } from '../components/finishingUpData/FinishingUpData';
 
 import { Button } from '../components/button/Button';
 
 import { handleChangeSlide } from '../utils/handlechangeSlide';
+import { selectedPlan, wrapUpData, addOnsPrice } from '../slices/formSlice';
 
-export const FinishingUp = (props) => {
+export const FinishingUp = () => {
   const dispatch = useDispatch();
+  const data = useSelector(wrapUpData);
+  const { isMonthlyPlan, selectedPlanPrice } = useSelector(selectedPlan);
+  const selectedAddOnsPrice = useSelector(addOnsPrice);
+
   return (
     <GridContainer>
       <SideBarContainer />
@@ -20,6 +26,11 @@ export const FinishingUp = (props) => {
         <Heading
           heading='Finishing Up'
           subheading='Double-check everything looks OK before confirming.'
+        />
+        <FinishingUpData
+          data={data}
+          planPeriod={isMonthlyPlan}
+          totalCost={selectedPlanPrice + selectedAddOnsPrice}
         />
         <ButtonContainer>
           <Button
@@ -30,9 +41,9 @@ export const FinishingUp = (props) => {
           </Button>
           <Button
             changeSlide={() => handleChangeSlide('next', dispatch)}
-            className='btn btn--step'
+            className='btn btn--step btn--confirm'
           >
-            Next step
+            Confirm
           </Button>
         </ButtonContainer>
       </InfoContainer>

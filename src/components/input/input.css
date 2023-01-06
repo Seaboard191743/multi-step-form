@@ -6,9 +6,16 @@
 
 .input-group > input {
   font-size: 1.6rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #022959;
   padding: 1.6rem 1.2rem;
   border-radius: 0.8rem;
   border: 1px solid #d6d9e6;
+  transition: border-color 0.3s;
+}
+input[type='text']:focus {
+  border: 1px solid #483eff !important;
 }
 .input-group > .label-group {
   font-size: 1.4rem;
@@ -18,4 +25,13 @@
 
 .input-group > input::placeholder {
   color: #d6d9e6;
+}
+
+.label-group {
+  display: flex;
+}
+.label-group > span {
+  margin-left: auto;
+  color: #ee374a;
+  font-weight: 700;
 }

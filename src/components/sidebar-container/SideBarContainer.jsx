@@ -3,10 +3,10 @@ import { StepList } from '../step/StepList';
 
 import './sidebar-container.css';
 
-export const SideBarContainer = () => {
+export const SideBarContainer = ({ className }) => {
   return (
     <aside className='sidebar'>
-      <StepList />
+      <StepList className={className} />
     </aside>
   );
 };

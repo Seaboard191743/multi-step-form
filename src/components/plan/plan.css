@@ -84,3 +84,15 @@
 .plan-period-duration--active {
   color: #022959;
 }
+
+@media (max-width: 1050px) {
+  .plan {
+    width: 100%;
+    height: 77px;
+    display: flex;
+    margin-bottom: 1.2rem;
+  }
+  .plan-period {
+    margin-top: 1.2rem;
+  }
+}

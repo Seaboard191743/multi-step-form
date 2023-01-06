@@ -5,7 +5,7 @@ export const Heading = ({ heading, subheading }) => {
   return (
     <>
       <h1>{heading}</h1>
-      <p>{subheading}</p>
+      <p className='subheading'>{subheading}</p>
     </>
   );
 };

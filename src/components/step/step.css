@@ -34,3 +34,16 @@
   background-color: #bee2fd;
   color: #022959;
 }
+
+@media (max-width: 1050px) {
+  .steps {
+    display: flex;
+  }
+  .step-title-secondary,
+  .step-description {
+    display: none;
+  }
+  .step-indicator {
+    margin: 0 0.8rem;
+  }
+}

@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useInputChange } from '../hooks/useInputChange';
+import { useDispatch, useSelector } from 'react-redux';
 import { handleChangeSlide } from '../utils/handlechangeSlide';
-import { setPersonalInfo } from '../slices/formSlice';
+import {
+  setPersonalInfo,
+  setWarningLabel,
+  getWarningLabel,
+} from '../slices/formSlice';
+import { Form } from '../components/form/Form';
 
 import { GridContainer } from '../components/grid-container/GridContainer';
 import { SideBarContainer } from '../components/sidebar-container/SideBarContainer';
@@ -14,17 +20,9 @@ import { ButtonContainer } from '../components/button-container/ButtonContainer'
 import { Button } from '../components/button/Button';
 
 export const PersonalInfo = () => {
-  const [inputValue, setInputValue] = useState({
-    name: '',
-    email: '',
-    phone: '',
-  });
+  const { inputValue, handleInputValueChange } = useInputChange();
   const dispatch = useDispatch();
-
-  const handleInputValueChange = (e) => {
-    const { name, value } = e.target;
-    setInputValue((prev) => ({ ...prev, [name]: value }));
-  };
+  const warningLabel = useSelector(getWarningLabel);
 
   return (
     <GridContainer>
@@ -34,7 +32,7 @@ export const PersonalInfo = () => {
           heading='Personal info'
           subheading='Please provide your name, email address, and phone number.'
         />
-        <form className='form' autoComplete='off'>
+        <Form>
           <Input
             type='text'
             id='name'
@@ -44,6 +42,7 @@ export const PersonalInfo = () => {
             required={true}
             value={inputValue}
             changeInputValue={handleInputValueChange}
+            warningLabel={warningLabel.name}
           />
           <Input
             type='text'
@@ -54,6 +53,7 @@ export const PersonalInfo = () => {
             required={true}
             value={inputValue}
             changeInputValue={handleInputValueChange}
+            warningLabel={warningLabel.email}
           />
           <Input
             type='text'
@@ -64,17 +64,34 @@ export const PersonalInfo = () => {
             required={true}
             value={inputValue}
             changeInputValue={handleInputValueChange}
+            warningLabel={warningLabel.phone}
           />
-        </form>
+        </Form>
         <ButtonContainer>
           <Button
             changeSlide={() => {
               const { name, email, phone } = inputValue;
-              // if (name && email && phone) {
-              dispatch(setPersonalInfo(inputValue));
-              handleChangeSlide('next', dispatch);
-              // return;
-              // }
+
+              if (name && email && phone) {
+                dispatch(setPersonalInfo(inputValue));
+                handleChangeSlide('next', dispatch);
+                dispatch(
+                  setWarningLabel({
+                    name: '',
+                    email: '',
+                    phone: '',
+                  })
+                );
+                return;
+              }
+              const warningLabel = 'This field is required';
+              dispatch(
+                setWarningLabel({
+                  name: name ? '' : warningLabel,
+                  email: email ? '' : warningLabel,
+                  phone: phone ? '' : warningLabel,
+                })
+              );
               // alert('Fill in the form');
             }}
             className='btn btn--step'
