@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux/es/exports';
-import { slideNumber } from '../../slices/formSlice';
+import { slideNumber } from '../../slices/slidesSlice';
 
 import './slide-container.css';
 

@@ -1,4 +1,4 @@
-import { changeSlide } from '../slices/formSlice';
+import { changeSlide } from '../slices/slidesSlice';
 
 export const handleChangeSlide = (direction, dispatch) => {
   dispatch(changeSlide(direction));

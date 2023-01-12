@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { slideNumber } from '../../slices/formSlice';
+import { slideNumber } from '../../slices/slidesSlice';
 
 export const Step = ({ number, primaryTitle, secondaryTitle, className }) => {
   const slideNum = useSelector(slideNumber);

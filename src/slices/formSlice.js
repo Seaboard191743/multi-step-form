@@ -1,8 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  slideNumber: 0,
-  maxNumberOfSlides: 4,
   personalInfo: { name: '', email: '', phone: '' },
   warningLabel: { name: '', email: '', phone: '' },
   selectedPlan: {
@@ -112,11 +110,7 @@ const formSlice = createSlice({
         (item) => item.checked
       );
     },
-    changeSlide: (state, { payload }) => {
-      if (state.slideNumber > state.maxNumberOfSlides - 1) return;
 
-      payload === 'next' ? (state.slideNumber += 1) : (state.slideNumber -= 1);
-    },
     changeSelectedPlan: (state) => {
       state.slideNumber = 1;
     },
