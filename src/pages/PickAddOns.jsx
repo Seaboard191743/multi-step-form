@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { GridContainer } from '../components/grid-container/GridContainer';
 import { SideBarContainer } from '../components/sidebar-container/SideBarContainer';
